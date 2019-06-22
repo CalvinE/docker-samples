@@ -1,0 +1,1 @@
+docker volume create --name postgres_data --driver local

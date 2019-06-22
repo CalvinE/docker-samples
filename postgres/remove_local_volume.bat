@@ -1,0 +1,1 @@
+docker volume rm postgres_data

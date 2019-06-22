@@ -1,9 +1,9 @@
 version: '3.1'
 
 services:
-  db:
-    build:
-      context: .
+  mysql:
+    # build:
+    #   context: .
     # command: --innodb-use-native-aio=0 #This is needed for some reason for mountind the DB data volume to the container...
     image: mysql:latest
     restart: always
