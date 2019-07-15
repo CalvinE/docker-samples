@@ -1,4 +1,4 @@
-CREATE TABLE users (
+/* CREATE TABLE users (
 	usersid serial PRIMARY KEY,
 	email VARCHAR(255) UNIQUE NOT NULL,
 	password VARCHAR(50) NOT NULL,
@@ -10,4 +10,4 @@ INSERT INTO users (email, password)
 VALUES ('calvin.echols@mail.com', 'password');
 
 SELECT *
-FROM users;
+FROM users; */

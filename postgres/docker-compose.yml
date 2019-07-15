@@ -10,7 +10,9 @@ services:
     environment:
       PGDATA: /var/lib/postgresql/data/pgdata
       POSTGRES_DB: testdb
-      POSTGRES_PASSWORD: password      
+      POSTGRES_PASSWORD: password1@3
+      POSTGRES_USER: postgres
+
     ports:
       - 5432:5432
     expose:
