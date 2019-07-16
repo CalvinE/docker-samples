@@ -1,0 +1,2 @@
+# Docker samples!
+## This is a collection of docker sample to quickly various services and configurations running when you need to add a service to a docker compose file, or just run locally to do some development / testing.

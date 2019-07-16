@@ -2,9 +2,8 @@ version: '3.1'
 # https://hub.docker.com/_/nginx
 services:
   nginx:
-    # build:
-    #   context: .
-    image: nginx:latest
+    build:
+      context: .
     restart: always
     # environment:
     #   # NGINX_HOST: test.com
@@ -17,5 +16,6 @@ services:
       # - '8080'
     volumes:
       - "./www:/usr/share/nginx/html:ro"
-      # - "./config:/etc/nginx/conf.d:ro"
+      - "./config:/etc/nginx/conf.d:ro"
+      - "./logs:/var/log/nginx_logs"
     
