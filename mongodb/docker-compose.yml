@@ -18,6 +18,6 @@ services:
       - '27017'
       # - '27018'
     volumes:
-      # - "./data:/data/db" #cannot this this now because of a bug in how docker for windows mapps files... Non wondows or mac should not have this issue.
+      # - "./data:/data/db" # cannot do this now because of a bug in how docker for windows maps files... Non windows or mac should not have this issue.
       - "./init-db:/docker-entrypoint-initdb.d"
     
