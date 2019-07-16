@@ -1,0 +1,21 @@
+version: '3.1'
+# https://hub.docker.com/_/nginx
+services:
+  nginx:
+    # build:
+    #   context: .
+    image: nginx:latest
+    restart: always
+    # environment:
+    #   # NGINX_HOST: test.com
+      # NGINX_PORT: 80
+    ports:
+      # - 80:80
+      - 8080:80
+    # expose:
+      # - '80'
+      # - '8080'
+    volumes:
+      - "./www:/usr/share/nginx/html:ro"
+      # - "./config:/etc/nginx/conf.d:ro"
+    
