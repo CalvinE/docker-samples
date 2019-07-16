@@ -1,0 +1,23 @@
+version: '3.1'
+# https://hub.docker.com/_/mongo
+services:
+  mongodb:
+    # build:
+    #   context: .
+    # command: --innodb-use-native-aio=0 #This is needed for some reason for mountind the DB data volume to the container...
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: testdb
+    ports:
+      - 27017:27017
+      # - 27018:27018
+    expose:
+      - '27017'
+      # - '27018'
+    volumes:
+      # - "./data:/data/db" #cannot this this now because of a bug in how docker for windows mapps files... Non wondows or mac should not have this issue.
+      - "./init-db:/docker-entrypoint-initdb.d"
+    
