@@ -1,9 +1,11 @@
 version: '3.1'
-# https://hub.docker.com/_/nginx
+
 services:
+# https://hub.docker.com/_/nginx
   nginx:
-    build:
-      context: .
+    # build:
+    #   context: .
+    image: nginx
     restart: always
     # environment:
     #   # NGINX_HOST: test.com

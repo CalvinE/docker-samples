@@ -1,0 +1,32 @@
+version: '3.1'
+
+services:
+# https://hub.docker.com/_/wordpress/
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: exampleuser
+      WORDPRESS_DB_PASSWORD: examplepass
+      WORDPRESS_DB_NAME: exampledb
+# https://hub.docker.com/_/adminer
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+# https://hub.docker.com/_/mysql
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: exampledb
+      MYSQL_USER: exampleuser
+      MYSQL_PASSWORD: examplepass
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - "./data:/var/lib/mysql"
+      - "./init-db:/docker-entrypoint-initdb.d"
